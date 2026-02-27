@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
@@ -13,9 +12,9 @@ android {
         minSdk = 21
         targetSdk = 34
 
-        // Use function calls
-        versionCode(flutter.versionCode)
-        versionName(flutter.versionName)
+        // Kotlin DSL syntax for Flutter version properties
+        versionCode = project.extra["flutterVersionCode"] as Int
+        versionName = project.extra["flutterVersionName"] as String
 
         multiDexEnabled = true
     }
@@ -26,12 +25,16 @@ android {
     }
 
     kotlinOptions {
-        // Use compilerOptions DSL instead of deprecated jvmTarget string
-        freeCompilerArgs = listOf("-Xjvm-default=all")
+        freeCompilerArgs += listOf("-Xjvm-default=all")
         jvmTarget = "17"
     }
 }
 
+// Flutter source
 flutter {
     source = "../.."
 }
+
+// Make sure these are declared somewhere in the root or via Flutter
+val flutterVersionCode: Int by project
+val flutterVersionName: String by project
