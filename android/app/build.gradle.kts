@@ -12,9 +12,9 @@ android {
         minSdk = 21
         targetSdk = 34
 
-        // Kotlin DSL syntax for Flutter version properties
-        versionCode = project.extra["flutterVersionCode"] as Int
-        versionName = project.extra["flutterVersionName"] as String
+        // Access Flutter version code and name properly in Kotlin DSL
+        versionCode = (extra["flutter.versionCode"] as? Int) ?: 1
+        versionName = (extra["flutter.versionName"] as? String) ?: "1.0.0"
 
         multiDexEnabled = true
     }
@@ -30,7 +30,6 @@ android {
     }
 }
 
-// Flutter source
 flutter {
     source = "../.."
 }
