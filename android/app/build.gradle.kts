@@ -5,6 +5,8 @@ plugins {
 }
 
 android {
+    namespace = "com.example.markiti" // <-- add this line
+
     compileSdk = 34
 
     defaultConfig {
@@ -12,10 +14,20 @@ android {
         minSdk = 21
         targetSdk = 34
 
-        versionCode = 1        // hardcode your app version code
-        versionName = "1.0.0"  // hardcode your app version name
+        versionCode = 1
+        versionName = "1.0.0"
 
         multiDexEnabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjvm-default=all")
+        jvmTarget = "17"
     }
 }
 flutter {
