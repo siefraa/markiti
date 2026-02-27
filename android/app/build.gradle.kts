@@ -12,24 +12,12 @@ android {
         minSdk = 21
         targetSdk = 34
 
-        // Access Flutter version code and name properly in Kotlin DSL
-        versionCode = (extra["flutter.versionCode"] as? Int) ?: 1
-        versionName = (extra["flutter.versionName"] as? String) ?: "1.0.0"
+        versionCode = 1        // hardcode your app version code
+        versionName = "1.0.0"  // hardcode your app version name
 
         multiDexEnabled = true
     }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        freeCompilerArgs += listOf("-Xjvm-default=all")
-        jvmTarget = "17"
-    }
 }
-
 flutter {
     source = "../.."
 }
