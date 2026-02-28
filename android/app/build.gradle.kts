@@ -7,7 +7,7 @@ plugins {
 android {
     namespace = "com.example.markiti" // <-- add this line
 
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.markiti"
