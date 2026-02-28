@@ -197,8 +197,8 @@ MIT License
 ## Mawasiliano (Contact)
 
 Kwa maswali au msaada, wasiliana nasi:
-- Email: support@twendemarkiti.co.tz
-- Phone: +255 XXX XXX XXX
+- Email: seifraa97@gmail.com
+- Phone: +255 621905110
 
 ---
 
